@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= typeof judul !== 'undefined' ? judul : 'spoons' %></title>
+    <link rel="stylesheet" href="/src/output.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300;400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Floating settings cog -->
+    <div class="fixed left-0 top-[30%] -translate-y-1/2 bg-card border border-base border-l-0 rounded-r-card-sm p-3 shadow-card-sm cursor-pointer z-50 transition-smooth hover:pl-4.5">
+      <i class="fa-solid fa-cog animate-spin-slow text-[1.2rem] text-muted"></i>
+    </div>
+
+    <!-- Main content wrapper -->
+    <div class="flex flex-col flex-1 w-full max-w-[1440px] mx-auto px-10 min-h-screen relative max-md:px-5">
+      <%- body %>
+    </div>
+  </body>
+</html>

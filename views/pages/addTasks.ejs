@@ -1,0 +1,12 @@
+<form action="/todo" method="POST" class="grid grid-cols-[1fr_auto_auto] gap-4 mb-8 items-center max-md:grid-cols-1">
+  <input name="title" type="text" class="font-sans py-3.5 px-4.5 text-[0.9rem] bg-page-start border border-base rounded-card-sm text-dark outline-none w-full" placeholder="What needs to be done?" required maxlength="200" autocomplete="off" />
+  <div class="flex gap-3 max-md:w-full">
+    <select name="priority" class="font-sans text-[0.85rem] py-3 px-3.5 bg-page-start border border-base rounded-card-sm text-muted outline-none max-md:flex-1">
+      <option value="low">Low Priority</option><option value="medium" selected>Medium Priority</option><option value="high">High Priority</option>
+    </select>
+    <select name="category" class="font-sans text-[0.85rem] py-3 px-3.5 bg-page-start border border-base rounded-card-sm text-muted outline-none max-md:flex-1">
+      <option value="personal">Personal</option><option value="work" selected>Work</option><option value="ideas">Ideas</option>
+    </select>
+  </div>
+  <button type="submit" class="inline-flex items-center justify-center h-12 py-3.25 px-6 font-sans text-[0.85rem] font-semibold uppercase tracking-[0.05em] rounded-card-sm border-none cursor-pointer bg-primary text-white">Add Task</button>
+</form>

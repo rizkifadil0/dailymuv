@@ -1,0 +1,105 @@
+<!-- Navigation Header -->
+<header
+  class="h-[100px] flex justify-between items-center border-b border-base relative z-[99] max-md:h-20"
+>
+  <div class="flex items-center">
+    <a
+      href="/"
+      class="font-serif text-[2.2rem] font-medium italic text-dark tracking-[-1px] relative"
+    >
+      DailyMuv
+    </a>
+  </div>
+
+  <nav
+    class="nav-bar flex items-center gap-10 max-md:fixed max-md:top-0 max-md:right-[-100%] max-md:w-4/5 max-md:max-w-[320px] max-md:h-screen max-md:bg-card max-md:shadow-card-lg max-md:flex-col max-md:justify-center max-md:gap-10 max-md:py-[60px] max-md:px-10 max-md:transition-smooth max-md:z-[100]"
+  >
+    <ul
+      class="flex list-none gap-8 max-md:flex-col max-md:items-center max-md:gap-7 max-md:w-full"
+    >
+      <li>
+        <a
+          href="/dashboard"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          >Dashboard</a
+        >
+      </li>
+      <li>
+        <a
+          href="/journal"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          >Journal</a
+        >
+      </li>
+      <li>
+        <a
+          href="/todo"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          >Tasks</a
+        >
+      </li>
+      <li>
+        <a
+          href="/weather"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          >Weather</a
+        >
+      </li>
+    </ul>
+    <div>
+      <% if (isAuthenticated) { %>
+        <form action="/logout" method="POST">
+          <button type="submit" class="inline-flex items-center justify-center py-2.5 px-6 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.12em] rounded-card-sm border-none cursor-pointer transition-smooth bg-primary text-white hover:bg-primary-hover hover:-translate-y-0.5">Logout</button>
+        </form>
+      <% } else { %>
+        <a href="/login" class="inline-flex items-center justify-center py-2.5 px-6 font-sans text-[0.8rem] font-semibold uppercase tracking-[0.12em] rounded-card-sm border-none cursor-pointer transition-smooth bg-primary text-white hover:bg-primary-hover hover:-translate-y-0.5">Sign In</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <!-- Mobile Hamburger Menu Button -->
+  <button
+    class="mobile-menu-toggle hidden max-md:flex flex-col justify-between w-6 h-[18px] bg-transparent border-none cursor-pointer z-[101]"
+    aria-label="Toggle Menu"
+  >
+    <span
+      class="bar w-full h-[2px] bg-dark transition-smooth origin-center"
+    ></span>
+    <span class="bar w-full h-[2px] bg-dark transition-smooth"></span>
+    <span
+      class="bar w-full h-[2px] bg-dark transition-smooth origin-center"
+    ></span>
+  </button>
+</header>
+
+<script>
+  // Mobile menu interaction
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector(".mobile-menu-toggle");
+    const navBar = document.querySelector(".nav-bar");
+    const bars = document.querySelectorAll(".mobile-menu-toggle .bar");
+
+    if (toggleBtn && navBar) {
+      toggleBtn.addEventListener("click", () => {
+        navBar.classList.toggle("right-0");
+        navBar.classList.toggle("right-[-100%]");
+
+        // Hamburger animation to 'X'
+        bars[0].classList.toggle("translate-y-[8px]");
+        bars[0].classList.toggle("rotate-45");
+        bars[1].classList.toggle("opacity-0");
+        bars[2].classList.toggle("translate-y-[-8px]");
+        bars[2].classList.toggle("rotate-[-45deg]");
+      });
+    }
+
+    // Highlight active link based on window location
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-dark", "after:w-full");
+      }
+    });
+  });
+</script>

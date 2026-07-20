@@ -1,0 +1,110 @@
+<%- include('../partials/nav') %>
+
+<main
+  class="flex-1 flex justify-center items-center py-[60px] px-0 min-h-[calc(100vh-180px)] animated-fade-in-up"
+>
+  <div
+    class="bg-card border border-base rounded-card-md p-12 w-full max-w-[460px] shadow-card-md transition-smooth hover:shadow-card-lg hover:-translate-y-0.5 max-sm:py-8 max-sm:px-5"
+  >
+    <div class="text-center mb-8">
+      <span
+        class="font-serif text-[2rem] font-medium italic text-dark inline-block mb-3"
+        >DailyMuf<span
+          class="inline-block w-1.5 h-1.5 bg-primary rounded-full ml-0.5 mb-1.5"
+        ></span
+      ></span>
+      <h2 class="font-sans text-[1.5rem] font-semibold text-dark mb-1.5">
+        Welcome back
+      </h2>
+      <p class="text-[0.85rem] text-muted">
+        Please enter your details to sign in
+      </p>
+    </div>
+
+    <% if (error) { %>
+      <p class="rounded-card-sm bg-red-50 px-4 py-3 text-sm text-red-700"><%= error %></p>
+    <% } else if (query?.registered) { %>
+      <p class="rounded-card-sm bg-green-50 px-4 py-3 text-sm text-green-700">Pendaftaran berhasil. Silakan login.</p>
+    <% } %>
+    <form action="/login" method="POST" class="flex flex-col gap-5">
+      <div class="flex flex-col gap-2">
+        <label
+          for="email"
+          class="text-[0.8rem] font-semibold text-dark uppercase tracking-[0.05em]"
+          >Email Address</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="font-sans py-3 px-4 text-[0.9rem] bg-page-start border border-base rounded-card-sm text-dark outline-none transition-smooth w-full focus:border-primary focus:bg-card focus:ring-3 focus:ring-primary-light"
+          placeholder="Enter your email"
+          value="<%= formData?.email || '' %>"
+          required
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="flex justify-between items-center">
+          <label
+            for="password"
+            class="text-[0.8rem] font-semibold text-dark uppercase tracking-[0.05em]"
+            >Password</label
+          >
+          <a
+            href="#"
+            class="text-[0.8rem] text-primary font-medium hover:text-primary-hover hover:underline"
+            >Forgot password?</a
+          >
+        </div>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="font-sans py-3 px-4 text-[0.9rem] bg-page-start border border-base rounded-card-sm text-dark outline-none transition-smooth w-full focus:border-primary focus:bg-card focus:ring-3 focus:ring-primary-light"
+          placeholder="••••••••"
+          required
+          autocomplete="current-password"
+        />
+      </div>
+
+      <div class="flex justify-between items-center">
+        <label
+          class="flex items-center relative pl-7 cursor-pointer text-[0.85rem] text-muted select-none"
+        >
+          <input
+            type="checkbox"
+            id="remember"
+            name="remember"
+            class="absolute opacity-0 cursor-pointer h-0 w-0 peer"
+          />
+          <span
+            class="absolute top-1/2 left-0 -translate-y-1/2 h-[18px] w-[18px] bg-page-start border border-base rounded-card-sm transition-smooth peer-hover:border-primary peer-checked:bg-primary peer-checked:border-primary after:content-[''] after:absolute after:hidden peer-checked:after:block after:left-[6px] after:top-[2px] after:w-1 after:h-2 after:border-white after:border-r-2 after:border-b-2 after:rotate-45"
+          ></span>
+          Remember for 30 days
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        class="inline-flex items-center justify-center p-3.5 font-sans text-[0.85rem] font-semibold uppercase tracking-[0.1em] rounded-card-sm border-none cursor-pointer transition-smooth bg-primary text-white shadow-[0_4px_14px_rgba(191,111,56,0.2)] hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(191,111,56,0.3)] mt-2 w-full"
+      >
+        Sign In
+      </button>
+    </form>
+
+    <div class="text-center mt-6 text-[0.85rem] text-muted">
+      <p>
+        Don't have an account?
+        <a
+          href="/signup"
+          class="text-primary font-semibold hover:text-primary-hover hover:underline"
+          >Sign up</a
+        >
+      </p>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

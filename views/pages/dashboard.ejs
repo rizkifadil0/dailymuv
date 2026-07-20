@@ -1,0 +1,189 @@
+<%- include('../partials/nav') %>
+
+<main class="flex-1 py-10 px-0 animated-fade-in-up">
+  <!-- Welcome Header -->
+  <div class="flex justify-between items-end mb-10 max-md:flex-col max-md:items-start max-md:gap-4">
+    <div>
+      <p class="text-[0.85rem] font-semibold uppercase tracking-[0.15em] text-[#9fa2a8] mb-1.5" id="current-date">Saturday, July 18, 2026</p>
+      <h1 class="font-serif text-[3rem] font-normal text-dark tracking-[-1px] leading-[1.1]">Your Daily Space</h1>
+    </div>
+    <div class="max-md:w-full">
+      <a href="/todo" class="w-full inline-flex items-center justify-center py-3 px-7 font-sans text-[0.9rem] font-medium tracking-[0.05em] uppercase rounded-card-sm border-none cursor-pointer transition-smooth bg-primary text-white shadow-[0_4px_14px_rgba(191,111,56,0.2)] hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(191,111,56,0.3)] max-md:w-full">
+        <i class="fa-solid fa-plus mr-2"></i>New Task
+      </a>
+    </div>
+  </div>
+
+  <!-- Dashboard Grid -->
+  <div class="grid grid-cols-2 gap-8 max-md:grid-cols-1">
+    <!-- Journal Quick View Card -->
+    <div class="bg-card border border-base rounded-card-md p-8 shadow-card-sm flex flex-col transition-smooth min-h-[320px] hover:shadow-card-md hover:-translate-y-0.5">
+      <div class="flex justify-between items-center border-b border-base pb-4 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="text-[1.1rem] text-primary bg-primary-light w-9 h-9 rounded-lg flex items-center justify-center"><i class="fa-solid fa-book-open"></i></div>
+          <h2 class="text-base font-semibold text-dark tracking-[0.02em]">Recent Journal</h2>
+        </div>
+        <a href="/journal" class="text-[0.8rem] font-semibold uppercase tracking-[0.05em] text-[#9fa2a8] hover:text-primary transition-smooth">View All</a>
+      </div>
+      <div class="flex-1 flex flex-col">
+        <p class="text-[0.8rem] text-[#9fa2a8] mb-1.5">Yesterday, 10:24 PM</p>
+        <h3 class="font-serif text-[1.4rem] font-normal mb-2.5 text-dark">A quiet morning walk</h3>
+        <p class="text-[0.88rem] text-muted leading-[1.6] line-clamp-3">Today I woke up early and walked through the nearby park. The dew on the grass, the fog lifting, and the calm quietness of the city made me feel...</p>
+      </div>
+      <div class="border-t border-base pt-5 mt-5">
+        <a href="/journal" class="w-full inline-flex items-center justify-center py-3 px-7 font-sans text-[0.9rem] font-medium tracking-[0.05em] uppercase rounded-card-sm border border-base bg-transparent text-dark cursor-pointer transition-smooth hover:bg-card hover:border-dark hover:-translate-y-0.5 hover:shadow-card-sm">Write Entry</a>
+      </div>
+    </div>
+
+    <!-- Task List Preview Card -->
+    <div class="bg-card border border-base rounded-card-md p-8 shadow-card-sm flex flex-col transition-smooth min-h-[320px] hover:shadow-card-md hover:-translate-y-0.5">
+      <div class="flex justify-between items-center border-b border-base pb-4 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="text-[1.1rem] text-primary bg-primary-light w-9 h-9 rounded-lg flex items-center justify-center"><i class="fa-solid fa-circle-check"></i></div>
+          <h2 class="text-base font-semibold text-dark tracking-[0.02em]">Tasks for Today</h2>
+        </div>
+        <a href="/todo" class="text-[0.8rem] font-semibold uppercase tracking-[0.05em] text-[#9fa2a8] hover:text-primary transition-smooth">View All</a>
+      </div>
+      <div class="flex-1 flex flex-col">
+        <ul class="list-none flex flex-col gap-3.5">
+          <li class="flex items-center gap-3">
+            <span class="checkbox-indicator w-5 h-5 rounded-full border border-primary bg-primary flex items-center justify-center text-[0.65rem] text-white cursor-pointer transition-smooth"><i class="fa-solid fa-check"></i></span>
+            <span class="task-text text-[0.9rem] text-[#9fa2a8] line-through">Design landing page templates</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="checkbox-indicator w-5 h-5 rounded-full border border-base flex items-center justify-center text-[0.65rem] text-transparent cursor-pointer transition-smooth"><i class="fa-solid fa-check"></i></span>
+            <span class="task-text text-[0.9rem] text-dark">Code responsive dashboard view</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="checkbox-indicator w-5 h-5 rounded-full border border-base flex items-center justify-center text-[0.65rem] text-transparent cursor-pointer transition-smooth"><i class="fa-solid fa-check"></i></span>
+            <span class="task-text text-[0.9rem] text-dark">Write documentation & guidelines</span>
+          </li>
+        </ul>
+      </div>
+      <div class="border-t border-base pt-5 mt-5">
+        <a href="/todo" class="w-full inline-flex items-center justify-center py-3 px-7 font-sans text-[0.9rem] font-medium tracking-[0.05em] uppercase rounded-card-sm border border-base bg-transparent text-dark cursor-pointer transition-smooth hover:bg-card hover:border-dark hover:-translate-y-0.5 hover:shadow-card-sm">Manage Tasks</a>
+      </div>
+    </div>
+
+    <!-- Weather Quick Widget -->
+    <div class="bg-card border border-base rounded-card-md p-8 shadow-card-sm flex flex-col transition-smooth min-h-[320px] hover:shadow-card-md hover:-translate-y-0.5">
+      <div class="flex justify-between items-center border-b border-base pb-4 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="text-[1.1rem] text-primary bg-primary-light w-9 h-9 rounded-lg flex items-center justify-center"><i class="fa-solid fa-cloud-sun"></i></div>
+          <h2 class="text-base font-semibold text-dark tracking-[0.02em]">Local Weather</h2>
+        </div>
+        <a href="/weather" class="text-[0.8rem] font-semibold uppercase tracking-[0.05em] text-[#9fa2a8] hover:text-primary transition-smooth">Detailed</a>
+      </div>
+      <div class="flex-1 flex flex-col justify-center gap-5">
+        <div class="flex items-center gap-6">
+          <div class="flex items-start">
+            <span class="text-[3.5rem] font-light leading-none text-dark">24</span><span class="text-[1.5rem] font-medium text-primary mt-1">°C</span>
+          </div>
+          <div>
+            <p class="text-[0.95rem] font-semibold text-dark">Partly Cloudy</p>
+            <p class="text-[0.8rem] text-[#9fa2a8] mt-0.5">London, UK</p>
+          </div>
+        </div>
+        <div class="flex gap-6 border-t border-dashed border-base pt-4">
+          <div class="flex flex-col gap-1">
+            <span class="text-[0.75rem] text-[#9fa2a8] uppercase tracking-[0.05em]">Humidity</span>
+            <span class="text-[0.9rem] font-semibold text-dark">65%</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-[0.75rem] text-[#9fa2a8] uppercase tracking-[0.05em]">Wind</span>
+            <span class="text-[0.9rem] font-semibold text-dark">12 km/h</span>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-base pt-5 mt-5">
+        <a href="/weather" class="w-full inline-flex items-center justify-center py-3 px-7 font-sans text-[0.9rem] font-medium tracking-[0.05em] uppercase rounded-card-sm border border-base bg-transparent text-dark cursor-pointer transition-smooth hover:bg-card hover:border-dark hover:-translate-y-0.5 hover:shadow-card-sm">Full Forecast</a>
+      </div>
+    </div>
+
+    <!-- Mood Tracker Card -->
+    <div class="bg-card border border-base rounded-card-md p-8 shadow-card-sm flex flex-col transition-smooth min-h-[320px] hover:shadow-card-md hover:-translate-y-0.5">
+      <div class="flex justify-between items-center pb-0 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="text-[1.1rem] text-primary bg-primary-light w-9 h-9 rounded-lg flex items-center justify-center"><i class="fa-solid fa-face-smile"></i></div>
+          <h2 class="text-base font-semibold text-dark tracking-[0.02em]">How is your mood today?</h2>
+        </div>
+      </div>
+      <div class="flex-1 flex flex-col justify-center">
+        <div class="grid grid-cols-4 gap-4">
+          <button class="mood-btn flex flex-col items-center gap-2 bg-page-start border border-base rounded-card-sm py-4 px-2 cursor-pointer transition-smooth hover:border-primary hover:bg-card hover:-translate-y-0.5" title="Reflective">
+            <span class="text-[1.8rem]">😌</span>
+            <span class="mood-name text-[0.75rem] font-semibold text-muted transition-smooth">Reflective</span>
+          </button>
+          <button class="mood-btn flex flex-col items-center gap-2 bg-primary-light border border-primary rounded-card-sm py-4 px-2 cursor-pointer transition-smooth" title="Happy">
+            <span class="text-[1.8rem]">😊</span>
+            <span class="mood-name text-[0.75rem] font-semibold text-primary transition-smooth">Happy</span>
+          </button>
+          <button class="mood-btn flex flex-col items-center gap-2 bg-page-start border border-base rounded-card-sm py-4 px-2 cursor-pointer transition-smooth hover:border-primary hover:bg-card hover:-translate-y-0.5" title="Productive">
+            <span class="text-[1.8rem]">😎</span>
+            <span class="mood-name text-[0.75rem] font-semibold text-muted transition-smooth">Productive</span>
+          </button>
+          <button class="mood-btn flex flex-col items-center gap-2 bg-page-start border border-base rounded-card-sm py-4 px-2 cursor-pointer transition-smooth hover:border-primary hover:bg-card hover:-translate-y-0.5" title="Tired">
+            <span class="text-[1.8rem]">🥱</span>
+            <span class="mood-name text-[0.75rem] font-semibold text-muted transition-smooth">Tired</span>
+          </button>
+        </div>
+      </div>
+      <div class="pt-0 mt-5">
+        <p class="text-[0.82rem] text-[#9fa2a8] text-center w-full">Your logs show you've been mostly Happy this week.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+
+<script>
+  // Dynamically update date
+  document.addEventListener('DOMContentLoaded', () => {
+    const dateEl = document.getElementById('current-date');
+    if (dateEl) {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      dateEl.textContent = new Date().toLocaleDateString('en-US', options);
+    }
+
+    // Mood interaction
+    const moodBtns = document.querySelectorAll('.mood-btn');
+    moodBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Reset all buttons to inactive styling
+        moodBtns.forEach(b => {
+          b.className = "mood-btn flex flex-col items-center gap-2 bg-page-start border border-base rounded-card-sm py-4 px-2 cursor-pointer transition-smooth hover:border-primary hover:bg-card hover:-translate-y-0.5";
+          const nameSpan = b.querySelector('.mood-name');
+          if (nameSpan) {
+            nameSpan.className = "mood-name text-[0.75rem] font-semibold text-muted transition-smooth";
+          }
+        });
+        // Set clicked button to active styling
+        btn.className = "mood-btn flex flex-col items-center gap-2 bg-primary-light border border-primary rounded-card-sm py-4 px-2 cursor-pointer transition-smooth";
+        const nameSpan = btn.querySelector('.mood-name');
+        if (nameSpan) {
+          nameSpan.className = "mood-name text-[0.75rem] font-semibold text-primary transition-smooth";
+        }
+      });
+    });
+
+    // Task quick complete toggle
+    const checkmarks = document.querySelectorAll('.checkbox-indicator');
+    checkmarks.forEach(check => {
+      check.addEventListener('click', () => {
+        check.classList.toggle('border-primary');
+        check.classList.toggle('bg-primary');
+        check.classList.toggle('text-white');
+        check.classList.toggle('border-base');
+        check.classList.toggle('text-transparent');
+        
+        const text = check.nextElementSibling;
+        if (text) {
+          text.classList.toggle('line-through');
+          text.classList.toggle('text-[#9fa2a8]');
+          text.classList.toggle('text-dark');
+        }
+      });
+    });
+  });
+</script>

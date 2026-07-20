@@ -1,0 +1,26 @@
+<%- include('../partials/nav') %>
+
+<main class="flex-1 flex justify-center items-center py-[60px] px-0 min-h-[calc(100vh-180px)] animated-fade-in-up">
+  <div class="text-center max-w-[540px] p-10">
+    <div class="mb-8 flex justify-center">
+      <!-- Minimalist visual representing a displaced pebble or search concept -->
+      <div class="relative w-[120px] h-[80px]">
+        <span class="absolute w-[70px] h-2.5 bg-black/4 rounded-full bottom-3 left-[25px] blur-[2px] transition-smooth animate-shadow-scale"></span>
+        <span class="absolute w-[60px] h-[40px] bg-gradient-to-br from-[#e6e8eb] to-[#cbd0d8] left-[30px] top-[15px] shadow-[inset_-2px_-2px_6px_rgba(0,0,0,0.1),_2px_4px_10px_rgba(0,0,0,0.08)] animate-float" style="border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;"></span>
+      </div>
+    </div>
+    
+    <h1 class="font-serif text-[8rem] font-light leading-none text-primary tracking-[-2px] mb-2 max-sm:text-[6rem]">404</h1>
+    <h2 class="font-sans text-[1.8rem] font-bold text-dark mb-4 max-sm:text-[1.5rem]">Page Not Found</h2>
+    <p class="text-[0.95rem] text-muted leading-[1.6] mb-9">
+      The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track.
+    </p>
+    
+    <div class="flex justify-center gap-4 max-sm:flex-col max-sm:gap-3 max-sm:w-full">
+      <a href="/" class="inline-flex items-center justify-center py-3 px-7 font-sans text-[0.85rem] font-semibold uppercase tracking-[0.08em] rounded border-none cursor-pointer transition-smooth bg-primary text-white shadow-[0_4px_14px_rgba(191,111,56,0.2)] hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(191,111,56,0.3)] max-sm:w-full"><i class="fa-solid fa-arrow-left mr-2"></i>Back to Home</a>
+      <a href="/dashboard" class="inline-flex items-center justify-center py-3 px-7 font-sans text-[0.85rem] font-semibold uppercase tracking-[0.08em] rounded border border-base bg-transparent text-dark cursor-pointer transition-smooth hover:bg-card hover:border-dark hover:-translate-y-0.5 hover:shadow-card-sm max-sm:w-full">Go to Dashboard</a>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
