@@ -5,7 +5,7 @@ const { connectDB } = require("./config/connect");
 
 //.env
 require("dotenv").config();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 //Route Library
 const LandingPageRoute = require("./routes/lpRoute");
