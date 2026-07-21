@@ -1,6 +1,6 @@
 <!-- Navigation Header -->
 <header
-  class="h-[100px] flex justify-between items-center border-b border-base relative z-[99] max-md:h-20"
+  class="nav-header h-[100px] flex justify-between items-center border-b border-base relative z-[99] max-md:h-20"
 >
   <div class="flex items-center">
     <a
@@ -12,36 +12,48 @@
   </div>
 
   <nav
-    class="nav-bar flex items-center gap-10 max-md:fixed max-md:top-0 max-md:right-[-100%] max-md:w-4/5 max-md:max-w-[320px] max-md:h-screen max-md:bg-card max-md:shadow-card-lg max-md:flex-col max-md:justify-center max-md:gap-10 max-md:py-[60px] max-md:px-10 max-md:transition-smooth max-md:z-[100]"
+    id="primary-navigation"
+    class="nav-bar flex items-center gap-10"
+    aria-label="Primary navigation"
   >
-    <ul
-      class="flex list-none gap-8 max-md:flex-col max-md:items-center max-md:gap-7 max-md:w-full"
+    <!-- Sidebar close button (visible on mobile) -->
+    <button
+      class="sidebar-close-btn"
+      type="button"
+      aria-label="Close navigation menu"
     >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <ul class="flex list-none gap-8">
       <li>
         <a
           href="/dashboard"
-          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full"
           >Dashboard</a
         >
       </li>
       <li>
         <a
           href="/journal"
-          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full"
           >Journal</a
         >
       </li>
       <li>
         <a
           href="/todo"
-          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full"
           >Tasks</a
         >
       </li>
       <li>
         <a
           href="/weather"
-          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full max-md:text-base"
+          class="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-muted py-2 relative transition-smooth hover:text-dark after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-smooth hover:after:w-full"
           >Weather</a
         >
       </li>
@@ -57,39 +69,57 @@
     </div>
   </nav>
 
+  <div class="nav-backdrop" aria-hidden="true"></div>
+
   <!-- Mobile Hamburger Menu Button -->
   <button
-    class="mobile-menu-toggle hidden max-md:flex flex-col justify-between w-6 h-[18px] bg-transparent border-none cursor-pointer z-[101]"
-    aria-label="Toggle Menu"
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
   >
-    <span
-      class="bar w-full h-[2px] bg-dark transition-smooth origin-center"
-    ></span>
-    <span class="bar w-full h-[2px] bg-dark transition-smooth"></span>
-    <span
-      class="bar w-full h-[2px] bg-dark transition-smooth origin-center"
-    ></span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="close-icon" style="display:none;">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
   </button>
 </header>
 
 <script>
-  // Mobile menu interaction
   document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.querySelector(".mobile-menu-toggle");
     const navBar = document.querySelector(".nav-bar");
-    const bars = document.querySelectorAll(".mobile-menu-toggle .bar");
+    const header = document.querySelector(".nav-header");
+    const backdrop = document.querySelector(".nav-backdrop");
+    const closeBtnInside = document.querySelector(".sidebar-close-btn");
+    const hamburgerIcon = toggleBtn ? toggleBtn.querySelector(".hamburger-icon") : null;
+    const closeIcon = toggleBtn ? toggleBtn.querySelector(".close-icon") : null;
 
-    if (toggleBtn && navBar) {
-      toggleBtn.addEventListener("click", () => {
-        navBar.classList.toggle("right-0");
-        navBar.classList.toggle("right-[-100%]");
+    const setMenu = (isOpen) => {
+      header.classList.toggle("menu-open", isOpen);
+      document.body.classList.toggle("menu-is-open", isOpen);
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+      toggleBtn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      if (hamburgerIcon) hamburgerIcon.style.display = isOpen ? "none" : "block";
+      if (closeIcon) closeIcon.style.display = isOpen ? "block" : "none";
+    };
 
-        // Hamburger animation to 'X'
-        bars[0].classList.toggle("translate-y-[8px]");
-        bars[0].classList.toggle("rotate-45");
-        bars[1].classList.toggle("opacity-0");
-        bars[2].classList.toggle("translate-y-[-8px]");
-        bars[2].classList.toggle("rotate-[-45deg]");
+    if (toggleBtn && navBar && header && backdrop) {
+      toggleBtn.addEventListener("click", () => setMenu(!header.classList.contains("menu-open")));
+      backdrop.addEventListener("click", () => setMenu(false));
+      if (closeBtnInside) closeBtnInside.addEventListener("click", () => setMenu(false));
+      navBar.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenu(false);
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) setMenu(false);
       });
     }
 
