@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: express-ejs-app
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+      # - PORT=3000 (aktifkan jika menggunakan environment variable untuk port)
+    # Jika Anda ingin melakukan live-reload saat development, aktifkan baris volumes di bawah:
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
