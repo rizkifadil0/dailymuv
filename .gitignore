@@ -2,3 +2,4 @@ node*
 .env
 DATABASE.md
 REQUIR*
+controller/noba.js
