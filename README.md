@@ -4,6 +4,11 @@ A full-stack daily life management web application built with **Node.js**, **Exp
 
 ---
 
+## 🌐 Live Demo
+
+Try the application:
+[See Application Demo](https://app.dailymuv.web.id)
+
 ## 📋 Table of Contents
 
 - [Features](#-features)
@@ -16,8 +21,6 @@ A full-stack daily life management web application built with **Node.js**, **Exp
 - [Project Structure](#-project-structure)
 - [API Routes & Endpoints](#-api-routes--endpoints)
 - [Security Features](#-security-features)
-- [Screenshots](#-screenshots)
-- [License](#-license)
 
 ---
 
